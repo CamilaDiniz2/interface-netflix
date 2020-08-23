@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix Clone</title>
+
+    <title>.: Netflix Clone</title>
 
     <!--Own css-->
     <link rel="stylesheet" href="./src/css/own/owl.carousel.min.css" />
@@ -45,7 +46,12 @@
             laboriosam vero adipisci, neque consectetur magnam iure veritatis
           </p>
           <div class="botoes">
-            <button role="button" class="botao-assistir" style="color: black;">
+            <button
+              role="button"
+              class="botao-assistir"
+              id="botao-assistir"
+              style="color: black;"
+            >
               <i class="fas fa-play"></i>
               assistir
             </button>
@@ -60,37 +66,34 @@
 
     <div class="carrosel-filmes">
       <h3>Minha Lista</h3>
-      <div class="owl-carousel owl-theme">
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini1.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini2.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini3.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini4.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini5.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini6.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini7.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini8.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini9.jpg" alt="Filme 1" />
-        </div>
-        <div class="item">
-          <img class="box-filme" src="./src/imgs/mini10.jpg" alt="Filme 1" />
-        </div>
+      <div class="owl-carousel owl-theme lista-filmes"></div>
+    </div>
+
+    <div class="carrosel-filmes filmes-favoritos">
+      <h3>Meu favoritos</h3>
+      <div class="owl-carousel owl-theme lista-filmes-favoritos"></div>
+    </div>
+
+    <!-- 
+        =============================
+                MODALS
+        =============================
+      -->
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <iframe
+          width="550"
+          height="315"
+          src="https://www.youtube.com/embed/UW8Zyt8SF_U"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <a class="close-modal">
+          <i class="far fa-window-close" style="color: #cdcdcd;"></i>
+        </a>
       </div>
     </div>
 

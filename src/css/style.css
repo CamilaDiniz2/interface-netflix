@@ -97,12 +97,16 @@ header nav a:hover {
   display: flex;
 }
 
-.botao-assistir {
+.botao-assistir,
+.botao-assistir:visited,
+.botao-assistir:active {
   background: var(--link-color-hover);
-  border: none;
+  border: 1px solid var(--link-color-hover);
+  outline: none;
   padding: 0.7rem 1rem;
   border-radius: 0.2rem;
   color: #232323;
+  box-shadow: 1px 1px 1px var(--link-color);
   letter-spacing: 0.01rem;
   margin-right: 2rem;
   cursor: pointer;
@@ -140,6 +144,7 @@ header nav a:hover {
 .botao-informacoes:hover {
   background-color: rgba(060, 60, 60, 0.1);
 }
+
 .carrosel-filmes {
   margin-top: 1rem;
 }
@@ -150,13 +155,102 @@ header nav a:hover {
   font-size: 1.2rem;
   letter-spacing: 0.08rem;
 }
+
 .box-filme {
   height: 100%;
   width: 100%;
   display: block;
+  opacity: 0.6;
+  z-index: 3;
+  cursor: pointer;
 }
 
-@media (max-width: 800px) {
+.box-filme:hover {
+  position: relative;
+  opacity: 1;
+  top: -0.5rem;
+  transform: 1000ms;
+}
+
+.adicionarFavoritos {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  background: var(--vermelho);
+  color: var(--link-color-hover);
+  width: 2rem;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+/*
+=============================
+            MODALS
+=============================
+*/
+
+.modal-overlay {
+  background-color: rgba(24, 21, 21, 0.781);
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  background-color: rgba(24, 21, 21, 0.52);
+  opacity: 1;
+  border-radius: 0.2rem;
+
+  max-width: 600px;
+  height: 65vh;
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal iframe {
+  display: flex;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-modal {
+  color: #111111;
+  position: absolute;
+  top: -0.1rem;
+  right: 0.4rem;
+  cursor: pointer;
+}
+
+.close-modal i:hover {
+  font-size: 1.1rem;
+  transition: 200ms ease-in-out;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+  transition: 800ms;
+}
+
+.modal-content {
+  width: 95%;
+  height: 95%;
+  background-color: aqua;
+}
+
+@media screen and (max-width: 700px) {
   header .container {
     display: flex;
     flex-direction: column;
@@ -171,6 +265,7 @@ header nav a:hover {
 
   header nav a {
     margin-left: 0;
+    font-size: 0.8rem;
   }
 
   header nav a:last-child {
